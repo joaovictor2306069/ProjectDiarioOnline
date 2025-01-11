@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% load {% static  %}%}
+{% block 'body' %}
+
+
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block 'title' %}{% endblock 'title' %}</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  {% block 'head' %}{% endblock 'head' %}
+</head>
+<body class="bg-gray-900 text-gray-300">
+  <!-- Header -->
+  <header class="bg-gray-800 shadow-md">
+    <nav class="mx-auto max-w-7xl flex items-center justify-between p-6">
+      <div class="flex items-center">
+        <a href="#" class="flex items-center -m-1.5 p-1.5">
+          <img class="h-10 w-auto" src="" alt="Logo">
+          <span class="sr-only">Diário</span>
+        </a>
+      </div>
+      <!-- Mobile Menu Button -->
+      <div class="lg:hidden">
+        <button type="button" class="rounded-md p-2.5 text-gray-400 hover:text-white hover:bg-gray-700">
+          <span class="sr-only">Open main menu</span>
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+        </button>
+      </div>
+      <!-- Desktop Navigation -->
+      <div class="hidden lg:flex lg:gap-x-12">
+        <a href="#" class="text-sm font-semibold text-gray-300 hover:text-white">Home</a>
+        <a href="#" class="text-sm font-semibold text-gray-300 hover:text-white">Pessoas</a>
+        <a href="#" class="text-sm font-semibold text-gray-300 hover:text-white">Escrever</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    {% block 'body' %}
+    <div class="min-h-screen flex items-center justify-center">
+      <div class="max-w-7xl mx-auto flex flex-col-reverse lg:flex-row items-center px-6 lg:px-0">
+        <!-- Text Content -->
+        <div class="text-center lg:text-left lg:w-1/2">
+          <h1 class="text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
+            Seus Diários, Seus Momentos
+          </h1>
+          <p class="text-lg text-gray-400 max-w-lg mx-auto lg:mx-0">
+            Capture seus pensamentos, histórias e memórias de maneira simples e elegante.
+          </p>
+          <a href="/diario/escrever" 
+             class="mt-8 bg-indigo-600 hover:bg-indigo-500 text-white py-2 px-6 rounded-lg text-lg shadow-lg inline-block">
+            Comece Agora
+          </a>
+        </div>
+
+        <!-- Image -->
+        <div class="lg:w-1/2 lg:pl-12">
+          <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+               alt="Imagem inspiradora" 
+               class="rounded-lg shadow-lg">
+        </div>
+      </div>
+    </div>
+    {% endblock 'body' %}
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 py-6">
+    <div class="max-w-7xl mx-auto text-center text-sm text-gray-400">
+      © 2025 Diário. Todos os direitos reservados.
+    </div>
+  </footer>
+</body>
+</html>
+
+
